@@ -8,7 +8,7 @@ class Duck {
 }
 
 class duckMission {
-  constructor(pondSize,duckStart) {
+  constructor(pondSize, duckStart) {
     this.xMax = pondSize[0];
     this.yMax = pondSize[2];
     this.duck = new Duck(duckStart);
@@ -51,7 +51,7 @@ class duckMission {
   }
 }
 
-function mission(pond,firstDuckStart,secondDuckStart,instructions1,instructions2) {
+function mission(pond, firstDuckStart, instructions1, secondDuckStart, instructions2) {
   let firstDuckMission = new duckMission(pond,firstDuckStart);
   let firstDuckCoords = firstDuckMission.moveTheDuck(instructions1);
 
