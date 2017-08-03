@@ -21,7 +21,11 @@ INNER JOIN EmailAddress
 ON Participant.EmailAddressId = EmailAddress.Id
 INNER JOIN Domain
 ON EmailAddress.DomainId = Domain.Id
-WHERE ParticipantTypeId IN (2,3,4)
+INNER JOIN ParticipantType
+ON ParticipantType.Id = Participant.ParticipantTypeId
+WHERE ParticipantType.Type = "To"
+OR ParticipantType.Type = "CC"
+OR ParticipantType.Type = "BCC"
 GROUP BY UrlText;
 
 
