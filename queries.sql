@@ -15,7 +15,7 @@ ON EmailAddress.PersonId = Person.Id;
 
 -- List of domains with total number of emails sent to each one
 
-SELECT UrlText, COUNT(*)
+SELECT UrlText, COUNT(*) AS total
 FROM Participant
 INNER JOIN EmailAddress
 ON Participant.EmailAddressId = EmailAddress.Id
