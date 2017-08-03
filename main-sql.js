@@ -19,7 +19,7 @@ console.log('Opening Database '.blue);
       })
   });
 
-  db.all("SELECT UrlText, COUNT(*) AS total FROM Participant INNER JOIN EmailAddress ON Participant.EmailAddressId = EmailAddress.Id INNER JOIN Domain ON EmailAddress.DomainId = Domain.Id WHERE ParticipantTypeId IN (2,3,4) GROUP BY UrlText;", function(err,rows) {
+  db.all("SELECT UrlText, COUNT(*) AS total FROM Participant INNER JOIN EmailAddress ON Participant.EmailAddressId = EmailAddress.Id INNER JOIN Domain ON EmailAddress.DomainId = Domain.Id INNER JOIN ParticipantType ON ParticipantType.Id = Participant.ParticipantTypeId WHERE ParticipantType.Type = 'To' OR ParticipantType.Type = 'CC' OR ParticipantType.Type = 'BCC' GROUP BY UrlText;", function(err,rows) {
       console.log('List of domains with total number of emails sent to each one:'.yellow);
       rows.forEach(function (row) {
         console.log(row.UrlText.green,'    ', row.total.toString().green);
