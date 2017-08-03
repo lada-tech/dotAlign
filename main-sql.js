@@ -1,3 +1,4 @@
+
 const colors = require('colors');
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./dotalign.sqlite.db');
@@ -26,3 +27,4 @@ console.log('Opening Database '.blue);
   });
 
 db.close();
+
