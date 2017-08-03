@@ -4,6 +4,8 @@
   "description": "coding challenge",
   "main": "ducks.js",
   "scripts": {
+    "main-sql": "node main-sql.js",
+    "main-ducks": "node main-ducks.js",
     "test": "mocha --compilers js:babel-register --require babel-polyfill"
   },
   "repository": {
@@ -25,6 +27,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.24.1",
+    "colors": "^1.1.2",
     "sinon": "^2.3.8"
   }
 }
