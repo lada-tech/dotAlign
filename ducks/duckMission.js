@@ -1,10 +1,9 @@
-const Duck = require('./duck.js');
+const colors = require('colors');
 
 class DuckMission {
-  constructor(pondSize, duckStart) {
-    this.xMax = pondSize[0];
-    this.yMax = pondSize[2];
-    this.duck = new Duck(duckStart);
+  constructor(duck, pond) {
+    this.duck = duck;
+    this.pond = pond;
   }
   makePTurn() {
     let pNext = {N: 'W', W: 'S', S: 'E', E: 'N'};
@@ -19,9 +18,6 @@ class DuckMission {
     if (this.duck.heading === 'E') this.duck.x ++;
     if (this.duck.heading === 'S') this.duck.y --;
     if (this.duck.heading === 'W') this.duck.x --;
-    if (this.duck.x > this.xMax || this.duck.y > this.yMax) {
-      console.log('Hey, duck, stay in the pond!');
-    }
   }
   moveTheDuck(instructions) {
     for (let i = 0;i < instructions.length;i++) {
@@ -36,10 +32,12 @@ class DuckMission {
           this.moveOneStep();
           break;
         default:
-          console.log('Invalid instructions');
+          console.log('Invalid instructions'.red);
       }
     }
-    return this.duck.getCoords();
+
+     if(!this.pond.isDuckInside(this.duck.x, this.duck.y)) return false;
+     else return this.duck.getCoords();
   }
 }
 

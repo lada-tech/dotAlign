@@ -1,15 +1,22 @@
 const {getDuckStart,
        logger,
        getPondSize,
-       getInstruction} = require('./utils.js')
+       getInstruction} = require('./utils.js');
+const Duck = require('./duck.js');
+const Pond = require('./pond.js');
+const DuckMission = require('./duckMission');
+
 
 function mission() {
-let start = getDuckStart();
-let pondSize = getPondSize();
+
+let duck = new Duck(...getDuckStart());
+let pond = new Pond(...getPondSize());
 let instruction = getInstruction();
-logger(`Start:   ${start}`);
-logger(`Pond:   ${pondSize}`);
-logger(`Instruction:   ${instruction}`);
+
+let newMission = new DuckMission(duck, pond);
+let duckStopCoords = newMission.moveTheDuck(instruction);
+
+logger(duckStopCoords);
 
 }
 

@@ -24,7 +24,8 @@ function isInstructionValid() {
   //some serious checking, should be a string made of P||S||F
 }
 function logger(output) {
-  console.log(output.green);
+  if(!output) console.log('Duck is OUT!'.red);
+  else console.log(`Result:    ${output}`.green);
 }
 
 module.exports = {getDuckStart,
