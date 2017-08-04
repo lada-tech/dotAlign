@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { Duck, DuckMission, mission } from '../ducks.js';
+import { Duck, DuckMission, mission } from '../ducks/ducks.js';
 
 
 describe('Duck', function() {
