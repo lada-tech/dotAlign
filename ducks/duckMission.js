@@ -1,5 +1,3 @@
-const colors = require('colors');
-
 class DuckMission {
   constructor(duck, pond) {
     this.duck = duck;
@@ -32,11 +30,11 @@ class DuckMission {
           this.moveOneStep();
           break;
         default:
-          console.log('Invalid instructions'.red);
+          return 'Invalid instructions';
       }
     }
 
-     if(!this.pond.isDuckInside(this.duck.x, this.duck.y)) return false;
+     if (!this.pond.isDuckInside(this.duck.x, this.duck.y)) return 'Duck is OUT';
      else return this.duck.getCoords();
   }
 }

@@ -5,7 +5,7 @@ class Duck {
     this.y = y;
     this.heading = heading;
   }
-  getCoords() { return `${this.x} ${this.y} ${this.heading}` }
+  getCoords() { return [this.x, this.y, this.heading]; }
 }
 
 module.exports = Duck;
