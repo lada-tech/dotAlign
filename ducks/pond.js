@@ -1,3 +1,5 @@
+const colors = require('colors');
+
 class Pond {
   constructor(maxX, maxY) {
 
@@ -8,7 +10,10 @@ class Pond {
     if(x > this.maxX ||
        y > this.maxY ||
        x < 0 || y < 0) {
-      throw new Error('Hey, duck, stay in the pond!');
+      return false;
+    }
+    else {
+      return true;
     }
   }
 }

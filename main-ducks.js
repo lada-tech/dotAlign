@@ -6,8 +6,8 @@ const {getDuckStart,
        logger,
        getPondSize,
        getInstruction} = require('./ducks/utils.js')
-console.log('Ready to send ducks on a mission\n\n'.blue);
 
+console.log('Ready to send ducks on a mission\n\n'.blue);
 
 let isComplited = false;
 while(!isComplited) {
