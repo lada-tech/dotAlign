@@ -1,5 +1,3 @@
-const colors = require('colors');
-
 class Pond {
   constructor(maxX, maxY) {
 
@@ -7,7 +5,7 @@ class Pond {
     this.maxY = maxY;
   }
   isDuckInside(x, y) {
-    if(x > this.maxX ||
+    if (x > this.maxX ||
        y > this.maxY ||
        x < 0 || y < 0) {
       return false;
