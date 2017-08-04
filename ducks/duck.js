@@ -1,6 +1,6 @@
 class Duck {
-  constructor(start) {
-    let [x, y, heading] = start.split(' ');
+  constructor(x, y, heading) {
+
     this.x = x;
     this.y = y;
     this.heading = heading;
